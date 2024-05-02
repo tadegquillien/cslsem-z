@@ -1,0 +1,47 @@
+.reminderContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0vw 1vw;
+    background-color: lightgrey;
+    /* max-width: 90vw; */
+
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+}
+
+.reminderText {
+    display: flex;
+    /* overflow: none; */
+}
+
+.reminderNodes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    /* max-width: 90vw; */
+}
+
+.reminderContained {
+    display: flex;
+    /* flex-direction: column; */
+    /* background-color: pink; */
+}
+
+.reminderContained2 {
+    display: flex;
+    padding: 1vw 1vw
+}
+
+.radio {
+    height: 25px;
+    width: 25px;
+}
+
+.likert {
+    height: 20px;
+    width: 20px;
+}
