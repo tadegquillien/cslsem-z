@@ -42,10 +42,21 @@ const experimentId = "cslsem-z";
 // In a real experiment, this would be replaced with everything that
 // is being recorded.
 export const sendData = (Data) => {
-    let message = { sessionId: sessionId, experimentId: experimentId, timestamp: Date.now(), Data: Data };
-    console.log(JSON.stringify(message));
-    wso.sendChunk(message);
+    // let message = { sessionId: sessionId, experimentId: experimentId, timestamp: Date.now(), Data: Data };
+    // console.log(JSON.stringify(message));
+    // wso.sendChunk(message);
+    var url = 'save_data.php';
+    var data_to_send = {filename: experimentId+"_"+sessionId, filedata: Data};
+    console.log(JSON.stringify(data_to_send));
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data_to_send),
+        headers: new Headers({
+                'Content-Type': 'application/json'
+        })
+    });
 }
+
 
 
 
