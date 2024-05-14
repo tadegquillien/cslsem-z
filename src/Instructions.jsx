@@ -224,11 +224,12 @@ const TaskTutorialTwo = (props) => {
     // text explaining how machines work
     const text1 = <span>
         <p>Nodes can be wired together to form a larger machine.
-            The state of the node at the origin of the arrow can influence the state of the node at the end of the arrow.</p>
+            The state of the node that the arrow is coming from (i.e. whether it is on or off) can influence the state of the node
+             that the arrow is pointing to.</p>
     </span>;
 
-    const textGen = <p> When a <b>{shapeGenerative}</b> node is <b><span style={{ color: colorGenerative }}>ON</span></b> it
-        can make another node turn <b><span style={{ color: 'orange' }}>ON</span></b>:</p>
+    const textGen = <p> When a <b>{shapeGenerative}</b> node is <b><span style={{ color: colorGenerative }}>ON</span></b> and points to another node,
+    that node can be <b><span style={{ color: 'orange' }}>ON</span></b>:</p>
 
 
     // images of the machines
@@ -315,7 +316,7 @@ const TaskTutorialTwo = (props) => {
     />;
 
 
-    const textPrev = <p>But if a <b>{shapePreventative}</b> node is <b><span style={{ color: colorPreventative }}>ON</span></b> it can make another node turn <b>OFF</b>:</p>
+    const textPrev = <p>But if a <b>{shapePreventative}</b> node is <b><span style={{ color: colorPreventative }}>ON</span></b> and points to another node, that node will be <b>OFF</b>:</p>
 
 
     const [generativeResponse, setGenerativeResponse] = useState('');
@@ -350,33 +351,33 @@ const TaskTutorialTwo = (props) => {
         is connected to another node:</p>
 
     const questionPreventative = <p>If a <b>{shapePreventative}</b> is <b><span style={{ color: colorPreventative }}>ON</span></b> and
-        is connected to another node:</p>
+        points to another node:</p>
 
 
     const inputElements = [
         <>
             <input type="radio" id="genOn" name="question" value="on" className="radio" />
-            <label for="genOn">it can make it turn on</label><br /><br />
+            <label for="genOn">that node can be ON</label><br /><br />
         </>,
         <>
             <input type="radio" id="genOff" name="question" value="off" className="radio" />
-            <label for="genOff">it can make it turn off</label><br /><br />
+            <label for="genOff">that node will be OFF</label><br /><br />
         </>,
         <>
             <input type="radio" id="genNd" name="question" value="nd" className="radio" />
-            <label for="genNd">it will have no effect</label><br /><br />
+            <label for="genNd">that node will turn ON or OFF randomly</label><br /><br />
         </>,
         <>
             <input type="radio" id="prevOn" name="question" value="on" className="radio" />
-            <label for="prevOn">it can make it turn on</label><br /><br />
+            <label for="prevOn">that node can be ON</label><br /><br />
         </>,
         <>
             <input type="radio" id="prevOff" name="question" value="off" className="radio" />
-            <label for="prevOff">it can make it turn off</label><br /><br />
+            <label for="prevOff">that node will be OFF</label><br /><br />
         </>,
         <>
             <input type="radio" id="prevNd" name="question" value="nd" className="radio" />
-            <label for="prevNd">it will have no effect</label><br /><br />
+            <label for="prevNd">that node will turn ON or OFF randomly</label><br /><br />
         </>
 
     ]
